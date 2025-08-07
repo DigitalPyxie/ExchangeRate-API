@@ -11,7 +11,7 @@ class ExchangeRate(BaseModel):
     date_recorded: date
 
 def init_db():
-    conn = sqlite3.connect("database,db")
+    conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
     cursor.execute(
         """
@@ -93,3 +93,4 @@ def delete_rate(rate_id: int):
     conn.close()
 
     return {"message": "Rate deleted"}
+
